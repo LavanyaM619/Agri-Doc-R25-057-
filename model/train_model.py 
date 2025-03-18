@@ -1,28 +1,17 @@
-from tensorflow.keras.applications import VGG16
-from tensorflow.keras.models import Model
-from tensorflow.keras.layers import Dense, Flatten, Dropout
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 
-# Data Preprocessing
-datagen = ImageDataGenerator(rescale=1./255, rotation_range=30, horizontal_flip=True)
-train_data = datagen.flow_from_directory("dataset/train", target_size=(224, 224), batch_size=32, class_mode="categorical")
+# Data Augmentation and Preprocessing
+train_datagen = ImageDataGenerator(
+    rescale=1./255,
+    rotation_range=30,
+    width_shift_range=0.2,
+    height_shift_range=0.2,
+    horizontal_flip=True
+)
 
-# Load Pretrained Model
-base_model = VGG16(weights="imagenet", include_top=False, input_shape=(224, 224, 3))
-
-for layer in base_model.layers:
-    layer.trainable = False
-
-x = Flatten()(base_model.output)
-x = Dense(256, activation='relu')(x)
-x = Dropout(0.5)(x)
-x = Dense(3, activation='softmax')  # Adjust number of classes
-
-model = Model(inputs=base_model.input, outputs=x)
-model.compile(optimizer="adam", loss="categorical_crossentropy", metrics=["accuracy"])
-
-# Train Model
-model.fit(train_data, epochs=20)
-
-# Save Model
-model.save("model/weed_detector.h5")
+train_data = train_datagen.flow_from_directory(
+    'data/train',
+    target_size=(224, 224),
+    batch_size=32,
+    class_mode='categorical'
+)
