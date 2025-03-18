@@ -1,0 +1,33 @@
+import React, { useState } from "react";
+import { View, Button, Image, Text } from "react-native";
+import * as ImagePicker from "expo-image-picker";
+import axios from "axios";
+
+export default function App() {
+  const [image, setImage] = useState(null);
+  const [prediction, setPrediction] = useState("");
+
+  const pickImage = async () => {
+    let result = await ImagePicker.launchImageLibraryAsync({ base64: true });
+    if (!result.canceled) {
+      setImage(result.uri);
+      uploadImage(result.uri);
+    }
+  };
+
+  const uploadImage = async (uri) => {
+    let formData = new FormData();
+    formData.append("image", { uri, name: "weed.jpg", type: "image/jpeg" });
+
+    let response = await axios.post("http://YOUR_FLASK_SERVER/predict", formData);
+    setPrediction(response.data.recommendation);
+  };
+
+  return (
+    <View>
+      <Button title="Pick an Image" onPress={pickImage} />
+      {image && <Image source={{ uri: image }} style={{ width: 200, height: 200 }} />}
+      {prediction && <Text>Recommendation: {prediction}</Text>}
+    </View>
+  );
+}
