@@ -1,0 +1,71 @@
+{
+  "Barnyard grass": {
+    "scientific_name": "Echinochloa crus-galli",
+    "description": "A major rice weed that competes strongly with crops. It grows rapidly, reduces yield, and is highly adaptive to wetland conditions.",
+    "control_methods": [
+      "Pre-emergence herbicides (Butachlor, Pretilachlor)",
+      "Manual hand weeding during early growth stages to prevent seed set",
+      "Water management: Maintain consistent water depth to suppress seed germination"
+    ]
+  },
+  "Bearded sprangletop": {
+    "scientific_name": "Leptochloa chinensis",
+    "description": "A grassy weed that reduces rice yield significantly. It competes with rice seedlings for nutrients and light, often found in dry patches.",
+    "control_methods": [
+      "Herbicide spraying (Cyhalofop-butyl, Bispyribac-sodium)",
+      "Early water management: Maintain flooded conditions to prevent growth",
+      "Crop rotation: Plant non-rice crops to break the weed life cycle"
+    ]
+  },
+  "Fimbristylis miliacea": {
+    "scientific_name": "Fimbristylis miliacea",
+    "description": "A sedge weed commonly found in wet rice fields. Once established, it is difficult to remove and can compete strongly with rice.",
+    "control_methods": [
+      "Pre-emergence herbicides (Oxadiargyl, Butachlor)",
+      "Manual removal before the seeds mature",
+      "Water depth management to suppress growth"
+    ]
+  },
+  "Leptochloa filiformis": {
+    "scientific_name": "Leptochloa filiformis",
+    "description": "A grass weed present in paddy fields that competes with young rice seedlings. Can reduce yield if left uncontrolled.",
+    "control_methods": [
+      "Post-emergence herbicides (Cyhalofop-butyl, Fenoxaprop-P-ethyl)",
+      "Hand weeding during early growth stages",
+      "Proper crop density to outcompete weeds naturally"
+    ]
+  },
+  "Ludwigia parviflora": {
+    "scientific_name": "Ludwigia parviflora",
+    "description": "A broadleaf aquatic weed that can cover the water surface in rice fields, causing shading of rice plants and reducing growth.",
+    "control_methods": [
+      "Manual removal to prevent shading",
+      "Herbicide application (2,4-D formulations) appropriate for aquatic weeds",
+      "Drainage and water management to reduce growth"
+    ]
+  },
+  "Negative": {
+    "description": "No weed detected in the field image or sample.",
+    "control_methods": [
+      "No action required"
+    ]
+  },
+  "Ricefield millet": {
+    "scientific_name": "Echinochloa colona",
+    "description": "A grass weed commonly found in rice ecosystems. Competes for nutrients and light. Can rapidly infest rice fields.",
+    "control_methods": [
+      "Herbicide spraying (Pendimethalin, Fenoxaprop)",
+      "Water management: Flooding or adjusting irrigation to suppress growth",
+      "Crop competition: Use vigorous rice varieties to naturally suppress weeds"
+    ]
+  },
+  "Smallflower umbrella sedge": {
+    "scientific_name": "Cyperus difformis",
+    "description": "A common sedge weed in paddy fields. It is fast-growing and can dominate if left unmanaged.",
+    "control_methods": [
+      "Post-emergence herbicides (Bispyribac-sodium)",
+      "Manual removal before flowering to prevent seed spread",
+      "Crop rotation to reduce infestation over time"
+    ]
+  }
+}
